@@ -11,7 +11,7 @@ from pyspark.sql.functions import lit,rand,col,explode,array
 '''
  In this project we are going to classify different IoT Botnets
 '''
-data_folder_loc='/'.join(os.path.abspath(os.getcwd()).split('/')[:-1])+'/data'
+data_folder_loc='../input/nbaiot-dataset'
 
 def init_spark():
     spark = SparkSession \
@@ -46,6 +46,8 @@ def read_all_and_merge(spark,label_map=False):
     whole_df=''
     first=True
     for files in os.listdir(data_folder_loc):
+        if files in ('data_summary.csv','features.csv','device_info.csv','README.md'):
+           continue
         label=label_map[files.split('.')[1]] # assign numeric label
         df=read_csv(spark,data_folder_loc+'/'+files)
         labeled_df=df.withColumn('label',lit(label))
