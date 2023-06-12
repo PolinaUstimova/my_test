@@ -48,6 +48,7 @@ class BotNetRFClassification:
     begin_time=time.time()
     print('Training Started...')
     trained_model=self.train_model(train_data,assembler)
+    trained_model.save("/kaggle/working/RandomForest")
     time_dif=time.time()-begin_time
     print(('Total Training Time Taken:%s'%time_dif))
     begin_time=time.time()
