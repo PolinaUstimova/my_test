@@ -59,6 +59,7 @@ class BotNetFMClassification:
         print('Training Started...')
         
         trained_model=self.train_model(train_data,assembler,step_size)
+        trained_model.save("/kaggle/working/FMClassifier"+str(step_size))
         time_dif=time.time()-begin_time
         print(('Total Training Time Taken:%s'%time_dif))
         begin_time=time.time()
