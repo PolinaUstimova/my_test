@@ -52,6 +52,7 @@ class BotNetDTClassification:
         print('Training Started...')
         #import pdb;pdb.set_trace()
         trained_model=self.train_model(train_data,assembler)
+        trained_model.save("/kaggle/working/DecisionTree"+str(i+1))
         time_dif=time.time()-begin_time
         print(('Total Training Time Taken:%s'%time_dif))
         begin_time=time.time()
