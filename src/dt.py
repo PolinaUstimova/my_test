@@ -48,7 +48,7 @@ class BotNetDTClassification:
     print('split data for train and test')
     train_data,test_data=dataset_df.randomSplit(splits, self.RANDOM_SEED)
     begin_time=time.time()
-    for i in range(5):
+    for i in range(1):
         print('Training Started...')
         #import pdb;pdb.set_trace()
         trained_model=self.train_model(train_data,assembler)
