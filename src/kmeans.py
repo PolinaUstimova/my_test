@@ -54,7 +54,7 @@ class BotNetKmeansCluster:
     #import pdb;pdb.set_trace()
     k_vals=[3,6,10,23,33]
     res={}
-    for i in range(5):
+    for i in range(1):
         trained_model=self.train_model(train_data,assembler,k_vals[i])
         trained_model.save("/kaggle/working/KMeans"+str(i))
         time_dif=time.time()-begin_time
