@@ -26,7 +26,7 @@ class BotNetFMClassification:
     
     print('Reading and Merging Started.....')
     
-    dataset_df=read_all_and_merge(spark,label_map)
+    dataset_df=read_all_and_merge(spark)
     #import pdb;pdb.set_trace()
     print('Removing Class Imbalance with under sampling')
     dataset_df=remove_class_imbalance(dataset_df)
